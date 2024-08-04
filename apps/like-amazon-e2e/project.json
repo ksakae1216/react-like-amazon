@@ -2,8 +2,38 @@
   "name": "like-amazon-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/like-amazon-e2e/src",
-  "tags": [],
-  "implicitDependencies": ["like-amazon"],
-  "// targets": "to see all targets run: nx show project like-amazon-e2e --web",
-  "targets": {}
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": [
+        "{workspaceRoot}/dist/.playwright/apps/like-amazon-e2e"
+      ],
+      "options": {
+        "config": "apps/like-amazon-e2e/playwright.config.ts"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "like-amazon:serve:production"
+        }
+      },
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/like-amazon-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "implicitDependencies": [
+    "like-amazon"
+  ]
 }
