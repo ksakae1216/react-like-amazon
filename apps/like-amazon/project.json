@@ -4,6 +4,35 @@
   "sourceRoot": "apps/like-amazon",
   "projectType": "application",
   "tags": [],
-  "// targets": "to see all targets run: nx show project like-amazon --web",
-  "targets": {}
+  "targets": {
+    "serve": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "like-amazon:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "like-amazon:build:production",
+          "dev": false
+        }
+      }
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/like-amazon"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/like-amazon"
+        },
+        "production": {}
+      }
+    }
+  }
 }
