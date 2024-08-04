@@ -1,4 +1,14 @@
+'use client';
+
+import ProductCard from './components/ProductCard';
 import './global.css';
+
+const products = [
+  { id: 1, name: '商品1', price: 1000, image: 'https://m.media-amazon.com/images/I/613+pDQxfXL._AC_SL1000_.jpg' },
+  { id: 2, name: '商品2', price: 2000, image: 'https://m.media-amazon.com/images/I/81xN+3usCKL._AC_SL1500_.jpg' },
+  { id: 3, name: '商品3', price: 3000, image: 'https://m.media-amazon.com/images/I/61I66N7SE6L._AC_SL1500_.jpg' },
+  { id: 4, name: '商品4', price: 4000, image: 'https://m.media-amazon.com/images/I/51eAd8gGMvL._AC_SL1500_.jpg' },
+];
 
 export default function Index() {
   return (
@@ -23,7 +33,9 @@ export default function Index() {
           <h2>大セール実施中！</h2>
         </div>
         <div className="productGrid">
-          {/* ここに商品のグリッドを追加 */}
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
         </div>
       </main>
       <footer className="footer">

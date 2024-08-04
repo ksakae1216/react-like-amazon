@@ -1,8 +1,16 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+test('has Amazon logo', async ({ page }) => {
   await page.goto('/');
+  await expect(page.locator('.logo')).toHaveText('Amazon');
+});
 
-  // Expect h1 to contain a substring.
-  expect(await page.locator('h1').innerText()).toContain('Welcome');
+test('has search bar', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.searchBar')).toBeVisible();
+});
+
+test('has product grid', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.productGrid')).toBeVisible();
 });
