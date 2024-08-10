@@ -8,6 +8,10 @@ const products = [
   { id: 2, name: '商品2', price: 2000, image: 'https://m.media-amazon.com/images/I/81xN+3usCKL._AC_SL1500_.jpg' },
   { id: 3, name: '商品3', price: 3000, image: 'https://m.media-amazon.com/images/I/61I66N7SE6L._AC_SL1500_.jpg' },
   { id: 4, name: '商品4', price: 4000, image: 'https://m.media-amazon.com/images/I/51eAd8gGMvL._AC_SL1500_.jpg' },
+  { id: 5, name: '商品5', price: 5000, image: 'https://m.media-amazon.com/images/I/71X+NGKVV5L._AC_SL1500_.jpg' },
+  { id: 6, name: '商品6', price: 6000, image: 'https://m.media-amazon.com/images/I/61CiqV6azL._AC_SL1000_.jpg' },
+  { id: 7, name: '商品7', price: 7000, image: 'https://m.media-amazon.com/images/I/71RC3o90shL._AC_SL1500_.jpg' },
+  { id: 8, name: '商品8', price: 8000, image: 'https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SL1500_.jpg' }
 ];
 
 export default function Index() {
@@ -30,7 +34,7 @@ export default function Index() {
       </nav>
       <main className="main">
         <div className="banner">
-          <h2>大セール実施中！</h2>
+          <img src="https://m.media-amazon.com/images/I/71H+Mzghv+L._SX3000_.jpg" width="100%" alt="夏休み祭" />
         </div>
         <div className="productGrid">
           {products.map((product) => (
