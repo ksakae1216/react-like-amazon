@@ -70,28 +70,39 @@ body {
 }
 
 .banner {
+  position: relative;
+  margin-bottom: -150px; /* バ��ーの下部をさらに商品グリッドに重ねる */
   background-color: #f0c14b;
   padding: 20px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .productGrid {
+  position: relative;
+  z-index: 10; /* 商品グリッドを前面に表示 */
+  padding-top: 0px; /* 上部のパディングを0に設定 */
+  margin-top: -300px; /* 上部のマージンを負の値に設定してさらに上に移動 */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
+  background: white; /* 背景色を白に設定してバナーとの境界を明確に */
   padding: 10px;
   text-align: center;
-  background-color: white;
+
+  div {
+    margin: 0 auto;
+  }
 }
 
-.product-image {
-  max-width: 100%;
+.product-card img {
+  width: 100%;
   height: auto;
+  display: block; /* 画像をブロック要素として扱う */
+  margin: 0 auto;
 }
 
 .product-card button {

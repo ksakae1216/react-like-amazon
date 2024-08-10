@@ -16,7 +16,6 @@ const ProductCard: React.FC<ProductProps> = ({ name, price, image }) => {
       </div>
       <h3>{name}</h3>
       <p>¥{price.toLocaleString()}</p>
-      <button>カートに追加</button>
     </div>
   );
 };
